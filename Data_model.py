@@ -31,6 +31,10 @@ class Data_model:
 
         return grouped_invalid_instances
     def print_validation_raport(self):
+        if not self.instaces:
+            print("No instances to generate report for")
+            return 
+
         if raport := self.generate_validation_raport():
             print("Invalid instances found:")
             for error_type,instances in raport.items():
@@ -38,6 +42,7 @@ class Data_model:
                 print("-"*len(error_type))
                 for instance in instances:
                     print(instance)
+                print()
         else:
             print("All instances valid!")
 
