@@ -5,7 +5,7 @@ from collections import defaultdict
 
 class Data_model:
 
-    def __init__(self,validators:list[Validator]|None = None):
+    def __init__(self,validators:list[Validator]):
         
         self.instaces:list[Base_data_instance] = []
         self.validators = validators
@@ -13,10 +13,9 @@ class Data_model:
 
     def add_instance(self,instance:Base_data_instance):
 
-        if self.validators:
-            validation_messages =  [validator.error_message for validator in self.validators if not validator.validate(instance)]
-            instance['invalid_attribute_message'] = validation_messages
-            instance['is_valid'] = not validation_messages
+        validation_messages =  [validator.error_message for validator in self.validators if not validator.validate(instance)]
+        instance['invalid_attribute_message'] = validation_messages
+        instance['is_valid'] = not validation_messages
         self.instaces.append(instance)
         
         
@@ -50,15 +49,3 @@ class Data_model:
                 print()
         else:
             print("All instances valid!")
-
-
-
-   
-
-
-    
-    
-
-    
-
-    

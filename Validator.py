@@ -18,5 +18,5 @@ class Cloud_validator(Validator):
         super().__init__(field,validate_function,error_message)
         if field not in Cloud_data_instance.__annotations__.keys():
             raise ValueError(f"Field {field} is not a valid field for Cloud_data_instance")
-    
-    
+
+
