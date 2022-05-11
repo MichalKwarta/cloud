@@ -1,0 +1,11 @@
+[
+    { "resource": "iam", "region": "eu-central-1"},
+    { "resource": "s3", "region": "eu-central-1"},
+    { "resource": "cdn", "region": "eucentral-1"},
+    { "resource": "ec2", "region": ""},
+    {"resource":"wrong_resource","region":"wrong_region"},
+    {"resource":"wrong_resource","region":"eu-central-1"}
+    
+
+  ]
+  
